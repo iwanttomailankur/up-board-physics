@@ -346,10 +346,13 @@ body[data-lang="hi"] .thumb iframe[data-video-lang="hi"] { display: block; }
 }
 
 .unit-buttons {
-  display: flex;
-  gap: 8px;
-  margin: 10px 0 12px;
+    display: flex;
+    gap: 8px;
+    margin: 10px 0 12px;
+    flex-direction: row;
+    align-self: flex-end;
 }
+
 .unit-buttons .btn-small {
   font-family: var(--font-body);
   font-size: 12px;
