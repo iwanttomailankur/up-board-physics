@@ -8,28 +8,36 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
+<body data-lang="en">
 
 <div class="topbar">
   <div class="wrap">
     <a href="index.html" class="brand">UPBoard<span class="dot">•</span>Exam</a>
     <nav class="nav-links">
       <div class="subject-links">
-        <a href="physics.html">Physics</a>
-        <a href="chemistry.html">Chemistry</a>
-        <a href="biology.html">Biology</a>
+        <a href="physics.html" class="i18n" data-en="Physics" data-hi="भौतिकी">Physics</a>
+        <a href="chemistry.html" class="i18n" data-en="Chemistry" data-hi="रसायन विज्ञान">Chemistry</a>
+        <a href="biology.html" class="i18n" data-en="Biology" data-hi="जीव विज्ञान">Biology</a>
       </div>
-      <a href="notes.html">Buy Notes</a>
-      <a href="papers.html">Solved Papers</a>
-      <a href="privacy-policy.html">Privacy</a>
+      <a href="notes.html" class="i18n" data-en="Buy Notes" data-hi="नोट्स खरीदें">Buy Notes</a>
+      <a href="papers.html" class="i18n" data-en="Solved Papers" data-hi="हल प्रश्नपत्र">Solved Papers</a>
+      <div class="lang-toggle">
+        <button data-lang="en" onclick="setLang('en')">English Medium</button>
+        <button data-lang="hi" onclick="setLang('hi')">हिंदी माध्यम</button>
+      </div>
     </nav>
   </div>
 </div>
 
-<div class="wrap doc">
-  <h1>About this site</h1>
-  <p class="updated">A study companion for UP Board students</p>
+<header class="hero">
+  <div class="wrap">
+    <p class="hero-eyebrow">UPBoardExam.com</p>
+    <h1>About this site</h1>
+    <p class="lead">A study companion for UP Board students.</p>
+  </div>
+</header>
 
+<div class="wrap doc">
   <p>This site organizes Class 12 Physics into the exact unit structure used by the Uttar Pradesh Madhyamik Shiksha Parishad (UPMSP), so students can move through the syllabus in the same order and weightage they'll see on the exam paper.</p>
 
   <h2>What's here</h2>
@@ -45,6 +53,25 @@
     <span><a href="notes.html">Buy Notes</a> · <a href="papers.html">Solved Papers</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy-policy.html">Privacy Policy</a></span>
   </div>
 </footer>
+
+<script>
+function setLang(lang) {
+  document.body.setAttribute('data-lang', lang);
+  document.querySelectorAll('.i18n').forEach(function(el) {
+    var text = el.dataset[lang];
+    if (text) el.innerHTML = text;
+  });
+  document.querySelectorAll('.lang-toggle button').forEach(function(b) {
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+  try { localStorage.setItem('site-lang', lang); } catch (e) {}
+}
+(function() {
+  var savedLang = 'en';
+  try { savedLang = localStorage.getItem('site-lang') || 'en'; } catch (e) {}
+  setLang(savedLang);
+})();
+</script>
 
 </body>
 </html>
