@@ -130,7 +130,7 @@ body[data-lang="hi"] [data-video-lang="en"] { display: none; }
   font-size: clamp(32px, 5vw, 54px);
   line-height: 1.08;
   margin: 0 0 18px;
-  max-width: 15ch;
+  max-width: 17ch;
 }
 .hero h1 em { font-style: italic; color: var(--marigold); }
 .hero p.lead {
