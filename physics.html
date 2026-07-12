@@ -7,24 +7,16 @@
   <meta name="description" content="UP Board Class 12 Physics explained unit by unit in English and Hindi medium, matching the official UPMSP syllabus and marks weightage.">
   <link rel="stylesheet" href="assets/style.css">
   <style>
-    .card-actions {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      display: flex;
-      gap: 6px;
-      z-index: 10;
-    }
-    .card-actions .btn-small {
-      font-size: 11px;
-      padding: 3px 8px;
-      border-radius: 3px;
+    .btn-small {
+      font-size: 12px;
+      padding: 6px 12px;
+      border-radius: 4px;
       text-decoration: none;
       font-weight: 600;
-      line-height: 1.2;
+      display: inline-block;
     }
-    .card-actions .btn-notes { background: var(--marigold); color: var(--ink); }
-    .card-actions .btn-papers { background: var(--teal); color: white; }
+    .btn-small.btn-notes { background: var(--marigold); color: var(--ink); }
+    .btn-small.btn-papers { background: var(--teal); color: white; }
   </style>
 </head>
 <body data-lang="en">
@@ -91,15 +83,6 @@
       <!-- Unit 1 -->
       <article class="unit-card">
         <span class="unit-index">Unit 1</span>
-        <div class="card-actions">
-          <a class="btn-small btn-notes buy-note-btn"
-             data-en-link="https://pages.razorpay.com/REPLACE_WITH_UNIT1_ENGLISH"
-             data-hi-link="https://pages.razorpay.com/REPLACE_WITH_UNIT1_HINDI"
-             href="#" target="_blank">Notes</a>
-          <a class="btn-small btn-papers buy-papers-btn"
-             data-en-link="papers.html" data-hi-link="papers.html"
-             href="papers.html">Papers</a>
-        </div>
         <div class="thumb">
           <div class="placeholder" data-video-lang="en">Video not yet uploaded (EN)<br>paste YouTube embed URL here</div>
           <iframe data-video-lang="hi" src="https://www.youtube.com/embed/KwDSVZWx0s4" width="100%" height="100%" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -107,6 +90,18 @@
         <div class="body">
           <h3 class="i18n" data-en="Electrostatics" data-hi="वैद्युत स्थैतिकी">Electrostatics</h3>
           <p class="topics i18n" data-en="Electric charges &amp; fields, electric dipole, electric potential, capacitance, use of capacitors." data-hi="विद्युत आवेश एवं क्षेत्र, विद्युत द्विध्रुव, विद्युत विभव, धारिता, संधारित्रों का उपयोग।">Electric charges &amp; fields, electric dipole, electric potential, capacitance, use of capacitors.</p>
+
+          <!-- Buttons moved to body section -->
+          <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+            <a class="btn-small btn-notes buy-note-btn"
+               data-en-link="https://pages.razorpay.com/REPLACE_WITH_UNIT1_ENGLISH"
+               data-hi-link="https://pages.razorpay.com/REPLACE_WITH_UNIT1_HINDI"
+               href="#" target="_blank">Notes</a>
+            <a class="btn-small btn-papers buy-papers-btn"
+               data-en-link="papers.html" data-hi-link="papers.html"
+               href="papers.html">Papers</a>
+          </div>
+
           <div class="meta">
             <span class="i18n" data-en="Part A" data-hi="खंड अ">Part A</span>
             <span class="weight i18n" data-en="Core unit" data-hi="मुख्य यूनिट">Core unit</span>
@@ -117,10 +112,6 @@
       <!-- Unit 2 -->
       <article class="unit-card">
         <span class="unit-index">Unit 2</span>
-        <div class="card-actions">
-          <a class="btn-small btn-notes buy-note-btn" data-en-link="https://pages.razorpay.com/REPLACE_WITH_UNIT2_ENGLISH" data-hi-link="https://pages.razorpay.com/REPLACE_WITH_UNIT2_HINDI" href="#" target="_blank">Notes</a>
-          <a class="btn-small btn-papers buy-papers-btn" data-en-link="papers.html" data-hi-link="papers.html" href="papers.html">Papers</a>
-        </div>
         <div class="thumb">
           <div class="placeholder" data-video-lang="en">Video not yet uploaded (EN)<br>paste YouTube embed URL here</div>
           <div class="placeholder" data-video-lang="hi">वीडियो अभी अपलोड नहीं हुआ (HI)<br>YouTube embed URL यहाँ डालें</div>
@@ -128,17 +119,22 @@
         <div class="body">
           <h3 class="i18n" data-en="Current Electricity" data-hi="विद्युत धारा">Current Electricity</h3>
           <p class="topics i18n" data-en="Electric current, Ohm's law, resistivity &amp; conductivity, electric cells, Wheatstone bridge." data-hi="विद्युत धारा, ओम का नियम, प्रतिरोधकता एवं चालकता, विद्युत सेल, व्हीटस्टोन सेतु।">Electric current, Ohm's law, resistivity &amp; conductivity, electric cells, Wheatstone bridge.</p>
-          <div class="meta"><span class="i18n" data-en="Part A" data-hi="खंड अ">Part A</span><span class="weight i18n" data-en="Core unit" data-hi="मुख्य यूनिट">Core unit</span></div>
+
+          <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+            <a class="btn-small btn-notes buy-note-btn" data-en-link="https://pages.razorpay.com/REPLACE_WITH_UNIT2_ENGLISH" data-hi-link="https://pages.razorpay.com/REPLACE_WITH_UNIT2_HINDI" href="#" target="_blank">Notes</a>
+            <a class="btn-small btn-papers buy-papers-btn" data-en-link="papers.html" data-hi-link="papers.html" href="papers.html">Papers</a>
+          </div>
+
+          <div class="meta">
+            <span class="i18n" data-en="Part A" data-hi="खंड अ">Part A</span>
+            <span class="weight i18n" data-en="Core unit" data-hi="मुख्य यूनिट">Core unit</span>
+          </div>
         </div>
       </article>
 
       <!-- Unit 3 -->
       <article class="unit-card">
         <span class="unit-index">Unit 3</span>
-        <div class="card-actions">
-          <a class="btn-small btn-notes buy-note-btn" data-en-link="https://pages.razorpay.com/REPLACE_WITH_UNIT3_ENGLISH" data-hi-link="https://pages.razorpay.com/REPLACE_WITH_UNIT3_HINDI" href="#" target="_blank">Notes</a>
-          <a class="btn-small btn-papers buy-papers-btn" data-en-link="papers.html" data-hi-link="papers.html" href="papers.html">Papers</a>
-        </div>
         <div class="thumb">
           <div class="placeholder" data-video-lang="en">Video not yet uploaded (EN)<br>paste YouTube embed URL here</div>
           <div class="placeholder" data-video-lang="hi">वीडियो अभी अपलोड नहीं हुआ (HI)<br>YouTube embed URL यहाँ डालें</div>
@@ -146,17 +142,22 @@
         <div class="body">
           <h3 class="i18n" data-en="Magnetic Effects of Current &amp; Magnetism" data-hi="धारा के चुंबकीय प्रभाव तथा चुंबकत्व">Magnetic Effects of Current &amp; Magnetism</h3>
           <p class="topics i18n" data-en="Magnetic field, Biot-Savart law, Ampere's law, solenoids, electromagnets, permanent magnets." data-hi="चुंबकीय क्षेत्र, बायो-सावर्ट नियम, एम्पीयर का नियम, परिनालिका, विद्युत चुंबक, स्थायी चुंबक।">Magnetic field, Biot-Savart law, Ampere's law, solenoids, electromagnets, permanent magnets.</p>
-          <div class="meta"><span class="i18n" data-en="Part A" data-hi="खंड अ">Part A</span><span class="weight i18n" data-en="Core unit" data-hi="मुख्य यूनिट">Core unit</span></div>
+
+          <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+            <a class="btn-small btn-notes buy-note-btn" data-en-link="https://pages.razorpay.com/REPLACE_WITH_UNIT3_ENGLISH" data-hi-link="https://pages.razorpay.com/REPLACE_WITH_UNIT3_HINDI" href="#" target="_blank">Notes</a>
+            <a class="btn-small btn-papers buy-papers-btn" data-en-link="papers.html" data-hi-link="papers.html" href="papers.html">Papers</a>
+          </div>
+
+          <div class="meta">
+            <span class="i18n" data-en="Part A" data-hi="खंड अ">Part A</span>
+            <span class="weight i18n" data-en="Core unit" data-hi="मुख्य यूनिट">Core unit</span>
+          </div>
         </div>
       </article>
 
       <!-- Unit 4 -->
       <article class="unit-card">
         <span class="unit-index">Unit 4</span>
-        <div class="card-actions">
-          <a class="btn-small btn-notes buy-note-btn" data-en-link="https://pages.razorpay.com/REPLACE_WITH_UNIT4_ENGLISH" data-hi-link="https://pages.razorpay.com/REPLACE_WITH_UNIT4_HINDI" href="#" target="_blank">Notes</a>
-          <a class="btn-small btn-papers buy-papers-btn" data-en-link="papers.html" data-hi-link="papers.html" href="papers.html">Papers</a>
-        </div>
         <div class="thumb">
           <div class="placeholder" data-video-lang="en">Video not yet uploaded (EN)<br>paste YouTube embed URL here</div>
           <div class="placeholder" data-video-lang="hi">वीडियो अभी अपलोड नहीं हुआ (HI)<br>YouTube embed URL यहाँ डालें</div>
@@ -164,17 +165,22 @@
         <div class="body">
           <h3 class="i18n" data-en="Electromagnetic Induction &amp; Alternating Currents" data-hi="वैद्युतचुंबकीय प्रेरण तथा प्रत्यावर्ती धारा">Electromagnetic Induction &amp; Alternating Currents</h3>
           <p class="topics i18n" data-en="Faraday's laws, Lenz's law, self &amp; mutual inductance, AC generators, transformers." data-hi="फैराडे के नियम, लेंज का नियम, स्व एवं अन्योन्य प्रेरकत्व, AC जनरेटर, ट्रांसफार्मर।">Faraday's laws, Lenz's law, self &amp; mutual inductance, AC generators, transformers.</p>
-          <div class="meta"><span class="i18n" data-en="Part A" data-hi="खंड अ">Part A</span><span class="weight i18n" data-en="Core unit" data-hi="मुख्य यूनिट">Core unit</span></div>
+
+          <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+            <a class="btn-small btn-notes buy-note-btn" data-en-link="https://pages.razorpay.com/REPLACE_WITH_UNIT4_ENGLISH" data-hi-link="https://pages.razorpay.com/REPLACE_WITH_UNIT4_HINDI" href="#" target="_blank">Notes</a>
+            <a class="btn-small btn-papers buy-papers-btn" data-en-link="papers.html" data-hi-link="papers.html" href="papers.html">Papers</a>
+          </div>
+
+          <div class="meta">
+            <span class="i18n" data-en="Part A" data-hi="खंड अ">Part A</span>
+            <span class="weight i18n" data-en="Core unit" data-hi="मुख्य यूनिट">Core unit</span>
+          </div>
         </div>
       </article>
 
       <!-- Unit 5 -->
       <article class="unit-card">
         <span class="unit-index">Unit 5</span>
-        <div class="card-actions">
-          <a class="btn-small btn-notes buy-note-btn" data-en-link="https://pages.razorpay.com/REPLACE_WITH_UNIT5_ENGLISH" data-hi-link="https://pages.razorpay.com/REPLACE_WITH_UNIT5_HINDI" href="#" target="_blank">Notes</a>
-          <a class="btn-small btn-papers buy-papers-btn" data-en-link="papers.html" data-hi-link="papers.html" href="papers.html">Papers</a>
-        </div>
         <div class="thumb">
           <div class="placeholder" data-video-lang="en">Video not yet uploaded (EN)<br>paste YouTube embed URL here</div>
           <div class="placeholder" data-video-lang="hi">वीडियो अभी अपलोड नहीं हुआ (HI)<br>YouTube embed URL यहाँ डालें</div>
@@ -182,7 +188,16 @@
         <div class="body">
           <h3 class="i18n" data-en="Electromagnetic Waves" data-hi="वैद्युतचुंबकीय तरंगें">Electromagnetic Waves</h3>
           <p class="topics i18n" data-en="Displacement current, characteristics of EM waves, the electromagnetic spectrum." data-hi="विस्थापन धारा, वैद्युतचुंबकीय तरंगों के अभिलक्षण, वैद्युतचुंबकीय स्पेक्ट्रम।">Displacement current, characteristics of EM waves, the electromagnetic spectrum.</p>
-          <div class="meta"><span class="i18n" data-en="Part A" data-hi="खंड अ">Part A</span><span class="i18n" data-en="Short unit" data-hi="छोटी यूनिट">Short unit</span></div>
+
+          <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+            <a class="btn-small btn-notes buy-note-btn" data-en-link="https://pages.razorpay.com/REPLACE_WITH_UNIT5_ENGLISH" data-hi-link="https://pages.razorpay.com/REPLACE_WITH_UNIT5_HINDI" href="#" target="_blank">Notes</a>
+            <a class="btn-small btn-papers buy-papers-btn" data-en-link="papers.html" data-hi-link="papers.html" href="papers.html">Papers</a>
+          </div>
+
+          <div class="meta">
+            <span class="i18n" data-en="Part A" data-hi="खंड अ">Part A</span>
+            <span class="i18n" data-en="Short unit" data-hi="छोटी यूनिट">Short unit</span>
+          </div>
         </div>
       </article>
 
@@ -204,10 +219,6 @@
       <!-- Unit 6 -->
       <article class="unit-card high-yield">
         <span class="unit-index">Unit 6</span>
-        <div class="card-actions">
-          <a class="btn-small btn-notes buy-note-btn" data-en-link="https://pages.razorpay.com/REPLACE_WITH_UNIT6_ENGLISH" data-hi-link="https://pages.razorpay.com/REPLACE_WITH_UNIT6_HINDI" href="#" target="_blank">Notes</a>
-          <a class="btn-small btn-papers buy-papers-btn" data-en-link="papers.html" data-hi-link="papers.html" href="papers.html">Papers</a>
-        </div>
         <div class="thumb">
           <div class="placeholder" data-video-lang="en">Video not yet uploaded (EN)<br>paste YouTube embed URL here</div>
           <div class="placeholder" data-video-lang="hi">वीडियो अभी अपलोड नहीं हुआ (HI)<br>YouTube embed URL यहाँ डालें</div>
@@ -215,17 +226,22 @@
         <div class="body">
           <h3 class="i18n" data-en="Optics" data-hi="प्रकाशिकी">Optics</h3>
           <p class="topics i18n" data-en="Reflection &amp; refraction, lenses, optical instruments, wave optics &amp; interference." data-hi="परावर्तन एवं अपवर्तन, लेंस, प्रकाशीय यंत्र, तरंग प्रकाशिकी एवं व्यतिकरण।">Reflection &amp; refraction, lenses, optical instruments, wave optics &amp; interference.</p>
-          <div class="meta"><span class="i18n" data-en="Part B" data-hi="खंड ब">Part B</span><span class="weight i18n" data-en="13 marks" data-hi="13 अंक">13 marks</span></div>
+
+          <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+            <a class="btn-small btn-notes buy-note-btn" data-en-link="https://pages.razorpay.com/REPLACE_WITH_UNIT6_ENGLISH" data-hi-link="https://pages.razorpay.com/REPLACE_WITH_UNIT6_HINDI" href="#" target="_blank">Notes</a>
+            <a class="btn-small btn-papers buy-papers-btn" data-en-link="papers.html" data-hi-link="papers.html" href="papers.html">Papers</a>
+          </div>
+
+          <div class="meta">
+            <span class="i18n" data-en="Part B" data-hi="खंड ब">Part B</span>
+            <span class="weight i18n" data-en="13 marks" data-hi="13 अंक">13 marks</span>
+          </div>
         </div>
       </article>
 
       <!-- Unit 7 -->
       <article class="unit-card">
         <span class="unit-index">Unit 7</span>
-        <div class="card-actions">
-          <a class="btn-small btn-notes buy-note-btn" data-en-link="https://pages.razorpay.com/REPLACE_WITH_UNIT7_ENGLISH" data-hi-link="https://pages.razorpay.com/REPLACE_WITH_UNIT7_HINDI" href="#" target="_blank">Notes</a>
-          <a class="btn-small btn-papers buy-papers-btn" data-en-link="papers.html" data-hi-link="papers.html" href="papers.html">Papers</a>
-        </div>
         <div class="thumb">
           <div class="placeholder" data-video-lang="en">Video not yet uploaded (EN)<br>paste YouTube embed URL here</div>
           <div class="placeholder" data-video-lang="hi">वीडियो अभी अपलोड नहीं हुआ (HI)<br>YouTube embed URL यहाँ डालें</div>
@@ -233,17 +249,22 @@
         <div class="body">
           <h3 class="i18n" data-en="Dual Nature of Radiation &amp; Matter" data-hi="विकिरण तथा द्रव्य की द्वैत प्रकृति">Dual Nature of Radiation &amp; Matter</h3>
           <p class="topics i18n" data-en="Photoelectric effect, particle nature of light, wave nature of matter, de Broglie relation." data-hi="प्रकाश विद्युत प्रभाव, प्रकाश की कणीय प्रकृति, द्रव्य की तरंग प्रकृति, डी-ब्रॉग्ली संबंध।">Photoelectric effect, particle nature of light, wave nature of matter, de Broglie relation.</p>
-          <div class="meta"><span class="i18n" data-en="Part B" data-hi="खंड ब">Part B</span><span class="i18n" data-en="Core unit" data-hi="मुख्य यूनिट">Core unit</span></div>
+
+          <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+            <a class="btn-small btn-notes buy-note-btn" data-en-link="https://pages.razorpay.com/REPLACE_WITH_UNIT7_ENGLISH" data-hi-link="https://pages.razorpay.com/REPLACE_WITH_UNIT7_HINDI" href="#" target="_blank">Notes</a>
+            <a class="btn-small btn-papers buy-papers-btn" data-en-link="papers.html" data-hi-link="papers.html" href="papers.html">Papers</a>
+          </div>
+
+          <div class="meta">
+            <span class="i18n" data-en="Part B" data-hi="खंड ब">Part B</span>
+            <span class="i18n" data-en="Core unit" data-hi="मुख्य यूनिट">Core unit</span>
+          </div>
         </div>
       </article>
 
       <!-- Unit 8 -->
       <article class="unit-card">
         <span class="unit-index">Unit 8</span>
-        <div class="card-actions">
-          <a class="btn-small btn-notes buy-note-btn" data-en-link="https://pages.razorpay.com/REPLACE_WITH_UNIT8_ENGLISH" data-hi-link="https://pages.razorpay.com/REPLACE_WITH_UNIT8_HINDI" href="#" target="_blank">Notes</a>
-          <a class="btn-small btn-papers buy-papers-btn" data-en-link="papers.html" data-hi-link="papers.html" href="papers.html">Papers</a>
-        </div>
         <div class="thumb">
           <div class="placeholder" data-video-lang="en">Video not yet uploaded (EN)<br>paste YouTube embed URL here</div>
           <div class="placeholder" data-video-lang="hi">वीडियो अभी अपलोड नहीं हुआ (HI)<br>YouTube embed URL यहाँ डालें</div>
@@ -251,17 +272,22 @@
         <div class="body">
           <h3 class="i18n" data-en="Atoms &amp; Nuclei" data-hi="परमाणु तथा नाभिक">Atoms &amp; Nuclei</h3>
           <p class="topics i18n" data-en="Bohr's model of the atom, nuclear composition, radioactivity, binding energy." data-hi="बोर का परमाणु मॉडल, नाभिकीय संरचना, रेडियोसक्रियता, बंधन ऊर्जा।">Bohr's model of the atom, nuclear composition, radioactivity, binding energy.</p>
-          <div class="meta"><span class="i18n" data-en="Part B" data-hi="खंड ब">Part B</span><span class="i18n" data-en="Core unit" data-hi="मुख्य यूनिट">Core unit</span></div>
+
+          <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+            <a class="btn-small btn-notes buy-note-btn" data-en-link="https://pages.razorpay.com/REPLACE_WITH_UNIT8_ENGLISH" data-hi-link="https://pages.razorpay.com/REPLACE_WITH_UNIT8_HINDI" href="#" target="_blank">Notes</a>
+            <a class="btn-small btn-papers buy-papers-btn" data-en-link="papers.html" data-hi-link="papers.html" href="papers.html">Papers</a>
+          </div>
+
+          <div class="meta">
+            <span class="i18n" data-en="Part B" data-hi="खंड ब">Part B</span>
+            <span class="i18n" data-en="Core unit" data-hi="मुख्य यूनिट">Core unit</span>
+          </div>
         </div>
       </article>
 
       <!-- Unit 9 -->
       <article class="unit-card">
         <span class="unit-index">Unit 9</span>
-        <div class="card-actions">
-          <a class="btn-small btn-notes buy-note-btn" data-en-link="https://pages.razorpay.com/REPLACE_WITH_UNIT9_ENGLISH" data-hi-link="https://pages.razorpay.com/REPLACE_WITH_UNIT9_HINDI" href="#" target="_blank">Notes</a>
-          <a class="btn-small btn-papers buy-papers-btn" data-en-link="papers.html" data-hi-link="papers.html" href="papers.html">Papers</a>
-        </div>
         <div class="thumb">
           <div class="placeholder" data-video-lang="en">Video not yet uploaded (EN)<br>paste YouTube embed URL here</div>
           <div class="placeholder" data-video-lang="hi">वीडियो अभी अपलोड नहीं हुआ (HI)<br>YouTube embed URL यहाँ डालें</div>
@@ -269,7 +295,16 @@
         <div class="body">
           <h3 class="i18n" data-en="Electronic Devices" data-hi="इलेक्ट्रॉनिक युक्तियाँ">Electronic Devices</h3>
           <p class="topics i18n" data-en="PN junction diode, forward &amp; reverse bias, transistors, semiconductor basics." data-hi="PN संधि डायोड, अग्र एवं पश्च अभिनति, ट्रांजिस्टर, अर्धचालक मूल बातें।">PN junction diode, forward &amp; reverse bias, transistors, semiconductor basics.</p>
-          <div class="meta"><span class="i18n" data-en="Part B" data-hi="खंड ब">Part B</span><span class="i18n" data-en="Core unit" data-hi="मुख्य यूनिट">Core unit</span></div>
+
+          <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+            <a class="btn-small btn-notes buy-note-btn" data-en-link="https://pages.razorpay.com/REPLACE_WITH_UNIT9_ENGLISH" data-hi-link="https://pages.razorpay.com/REPLACE_WITH_UNIT9_HINDI" href="#" target="_blank">Notes</a>
+            <a class="btn-small btn-papers buy-papers-btn" data-en-link="papers.html" data-hi-link="papers.html" href="papers.html">Papers</a>
+          </div>
+
+          <div class="meta">
+            <span class="i18n" data-en="Part B" data-hi="खंड ब">Part B</span>
+            <span class="i18n" data-en="Core unit" data-hi="मुख्य यूनिट">Core unit</span>
+          </div>
         </div>
       </article>
 
@@ -307,7 +342,7 @@ function setLang(lang) {
     b.classList.toggle('active', b.dataset.lang === lang);
   });
 
-  // Show/Hide videos based on language
+  // Show/Hide videos
   document.querySelectorAll('[data-video-lang]').forEach(function(el) {
     el.style.display = (el.getAttribute('data-video-lang') === lang) ? '' : 'none';
   });
