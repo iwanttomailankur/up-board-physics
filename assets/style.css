@@ -112,33 +112,6 @@ button:focus-visible {
   font-weight: 600;
 }
 
-.lang-toggle {
-  display: flex;
-  background: var(--navy-soft);
-  border: 1px solid var(--navy-line);
-  border-radius: 999px;
-  padding: 3px;
-  gap: 2px;
-}
-.lang-toggle button {
-  appearance: none;
-  border: none;
-  background: transparent;
-  color: #B7BEC9;
-  font-family: inherit;
-  font-size: 13px;
-  font-weight: 600;
-  padding: 7px 14px;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: background .15s ease, color .15s ease;
-  white-space: nowrap;
-}
-.lang-toggle button.active {
-  background: var(--amber);
-  color: var(--navy);
-}
-
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
@@ -325,11 +298,6 @@ main.wrap { padding-top: 48px; padding-bottom: 12px; }
   border: 1px dashed rgba(232, 163, 61, 0.35);
   margin: 0;
 }
-/* sensible default before JS runs: show English, hide Hindi, so nothing overlaps on first paint */
-[data-video-lang="hi"] { display: none; }
-body[data-lang="hi"] [data-video-lang="en"] { display: none; }
-body[data-lang="hi"] [data-video-lang="hi"] { display: block; }
-body[data-lang="hi"] .thumb iframe[data-video-lang="hi"] { display: block; }
 
 .unit-card .body {
   padding: 18px 20px 20px;
