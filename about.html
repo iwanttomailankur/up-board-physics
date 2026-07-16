@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,23 +8,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body data-lang="en">
+<body>
 
 <div class="topbar">
   <div class="wrap">
     <a href="index.html" class="brand">UPBoardExam<span class="dot">•</span>Com</a>
     <nav class="nav-links">
       <div class="subject-links">
-        <a href="physics.html" class="i18n" data-en="Physics" data-hi="भौतिकी">Physics</a>
-        <a href="chemistry.html" class="i18n" data-en="Chemistry" data-hi="रसायन विज्ञान">Chemistry</a>
-        <a href="biology.html" class="i18n" data-en="Biology" data-hi="जीव विज्ञान">Biology</a>
+        <a href="physics.html">भौतिकी</a>
+        <a href="chemistry.html">रसायन विज्ञान</a>
+        <a href="biology.html">जीव विज्ञान</a>
+        <a href="maths.html">गणित</a>
       </div>
-      <a href="notes.html" class="i18n" data-en="Buy Notes" data-hi="नोट्स खरीदें">Buy Notes</a>
-      <a href="papers.html" class="i18n" data-en="Solved Papers" data-hi="हल प्रश्नपत्र">Solved Papers</a>
-      <div class="lang-toggle">
-        <button data-lang="en" onclick="setLang('en')">English Medium</button>
-        <button data-lang="hi" onclick="setLang('hi')">हिंदी माध्यम</button>
-      </div>
+      <a href="notes.html">नोट्स खरीदें</a>
+      <a href="papers.html">हल प्रश्नपत्र</a>
     </nav>
   </div>
 </div>
@@ -32,46 +29,27 @@
 <header class="hero">
   <div class="wrap">
     <p class="hero-eyebrow">UPBoardExam.com</p>
-    <h1>About this site</h1>
-    <p class="lead">A study companion for UP Board students.</p>
+    <h1>इस साइट के बारे में</h1>
+    <p class="lead">यूपी बोर्ड छात्रों के लिए एक अध्ययन साथी।</p>
   </div>
 </header>
 
 <div class="wrap doc">
-  <p>This site organizes Class 12 Physics into the exact unit structure used by the Uttar Pradesh Madhyamik Shiksha Parishad (UPMSP), so students can move through the syllabus in the same order and weightage they'll see on the exam paper.</p>
+  <p>यह साइट कक्षा 12 के भौतिकी, रसायन विज्ञान, जीव विज्ञान और गणित को उसी यूनिट संरचना में व्यवस्थित करती है जो उत्तर प्रदेश माध्यमिक शिक्षा परिषद (यूपीएमएसपी) उपयोग करती है, ताकि छात्र उसी क्रम और वेटेज में पाठ्यक्रम से गुजर सकें जो वे परीक्षा प्रश्नपत्र में देखेंगे।</p>
 
-  <h2>What's here</h2>
-  <p>Each unit links to a short video explainer covering the core concepts, formulas, and common exam questions for that topic — built to sit alongside your NCERT textbook, not replace it.</p>
+  <h2>यहाँ क्या है</h2>
+  <p>हर यूनिट उस विषय की मुख्य अवधारणाओं, सूत्रों और सामान्य परीक्षा प्रश्नों को कवर करने वाले एक संक्षिप्त वीडियो व्याख्याता से जुड़ी है — यह आपकी NCERT पाठ्यपुस्तक के साथ चलने के लिए बनाई गई है, उसकी जगह लेने के लिए नहीं।</p>
 
-  <h2>Who's behind it</h2>
-  <p>This project is run independently as a study resource and is not affiliated with, endorsed by, or officially connected to UPMSP or the Government of Uttar Pradesh. Syllabus references are drawn from publicly available UPMSP materials.</p>
+  <h2>इसके पीछे कौन है</h2>
+  <p>यह प्रोजेक्ट एक अध्ययन संसाधन के रूप में स्वतंत्र रूप से चलाया जाता है और यूपीएमएसपी या उत्तर प्रदेश सरकार से संबद्ध, अनुमोदित, या आधिकारिक रूप से जुड़ा हुआ नहीं है। पाठ्यक्रम संदर्भ सार्वजनिक रूप से उपलब्ध यूपीएमएसपी सामग्री से लिए गए हैं।</p>
 </div>
 
 <footer>
   <div class="wrap">
-    <span>© 2026 UPBoardExam.com · UP Board Class 12 Physics, Chemistry &amp; Biology</span>
-    <span><a href="notes.html">Buy Notes</a> · <a href="papers.html">Solved Papers</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy-policy.html">Privacy Policy</a></span>
+    <span>© 2026 UPBoardExam.com · यूपी बोर्ड कक्षा 12 भौतिकी, रसायन विज्ञान, जीव विज्ञान व गणित</span>
+    <span><a href="notes.html">नोट्स खरीदें</a> · <a href="papers.html">हल प्रश्नपत्र</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy-policy.html">Privacy Policy</a></span>
   </div>
 </footer>
-
-<script>
-function setLang(lang) {
-  document.body.setAttribute('data-lang', lang);
-  document.querySelectorAll('.i18n').forEach(function(el) {
-    var text = el.dataset[lang];
-    if (text) el.innerHTML = text;
-  });
-  document.querySelectorAll('.lang-toggle button').forEach(function(b) {
-    b.classList.toggle('active', b.dataset.lang === lang);
-  });
-  try { localStorage.setItem('site-lang', lang); } catch (e) {}
-}
-(function() {
-  var savedLang = 'en';
-  try { savedLang = localStorage.getItem('site-lang') || 'en'; } catch (e) {}
-  setLang(savedLang);
-})();
-</script>
 
 </body>
 </html>

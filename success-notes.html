@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Download Notes • UP Board</title>
+  <title>नोट्स डाउनलोड करें • यूपी बोर्ड</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
@@ -13,19 +13,19 @@
   <div class="topbar">
     <div class="wrap" style="display:flex; align-items:center; justify-content:space-between; padding:14px 0;">
     <a href="index.html" class="brand">UPBoardExam<span class="dot">•</span>Com</a>
-      <a href="physics.html" style="color:#B7BEC9; text-decoration:none; font-size:14px;">← Back to Physics</a>
+      <a href="physics.html" style="color:#B7BEC9; text-decoration:none; font-size:14px;">← भौतिकी पर वापस जाएँ</a>
     </div>
   </div>
 
   <div class="wrap" style="max-width: 680px; padding: 60px 20px 80px;">
-    
+
     <div style="text-align:center; margin-bottom: 40px;">
       <div style="font-size: 56px; margin-bottom: 12px;">🎉</div>
       <h1 style="font-size: 34px; margin-bottom: 8px; color: var(--navy);">
-        Thank you for your purchase!
+        खरीदारी के लिए धन्यवाद!
       </h1>
       <p id="subtitle" style="font-size: 18px; color: var(--muted); max-width: 420px; margin: 0 auto;">
-        Your notes are ready for instant download.
+        आपके नोट्स तुरंत डाउनलोड के लिए तैयार हैं।
       </p>
     </div>
 
@@ -35,17 +35,17 @@
         <h2 id="unit-name" style="font-size: 24px; margin: 0 0 8px; color: var(--navy);"></h2>
       </div>
 
-      <a id="btn-en" href="#" class="download-btn en" target="_blank" rel="noopener" style="display:none;">
-        📥 Download English Medium Notes (PDF)
+      <a id="btn-download" href="#" class="download-btn hi" rel="noopener" style="display:none;">
+        📥 नोट्स डाउनलोड करें (PDF)
       </a>
 
-      <a id="btn-hi" href="#" class="download-btn hi" target="_blank" rel="noopener" style="display:none;">
-        📥 हिंदी माध्यम नोट्स डाउनलोड करें (PDF)
-      </a>
+      <p id="loading-msg" style="font-size: 14px; color: var(--muted); text-align:center; margin: 8px 0 0;">
+        आपकी डाउनलोड लिंक तैयार की जा रही है…
+      </p>
     </div>
 
     <div style="background: var(--navy); padding: 18px 20px; border-radius: var(--radius-sm); font-size: 13px; color: #9CA3AF;">
-      These files are for your personal educational use only. Please do not share the links publicly.
+      यह फाइल केवल आपके निजी शैक्षणिक उपयोग के लिए है। कृपया इस लिंक को सार्वजनिक रूप से साझा न करें — यह लिंक ट्रैक किया जाता है और किसी भी समय निष्क्रिय किया जा सकता है।
     </div>
   </div>
 
@@ -56,40 +56,51 @@
   </footer>
 
   <script>
+    // ------------------------------------------------------------------
+    // SECURITY NOTE FOR THE SITE OWNER:
+    // This page no longer accepts raw Google Drive file IDs in the URL
+    // (the old ?en=...&hi=... pattern). Instead it expects a single opaque
+    // "token" query param, e.g. success-notes.html?token=phy-u1-hi
+    //
+    // The token is sent to a small redirect service (a Cloudflare Worker —
+    // see worker.js + SECURITY-README.md in this folder) which looks the
+    // token up server-side and 302-redirects to the real Drive file.
+    // The real Drive URL/ID is never present in this page's HTML or in the
+    // browser's address bar at any point — only the token is.
+    //
+    // Replace WORKER_URL below with your deployed Worker URL once you've
+    // followed SECURITY-README.md.
+    // ------------------------------------------------------------------
+    const WORKER_URL = "https://your-worker-subdomain.workers.dev/download";
+
     function getParam(name) {
       return new URLSearchParams(window.location.search).get(name);
     }
 
     function initPage() {
       const unit = getParam('unit') || '';
-      const title = getParam('title') || 'Notes';
-      const enId = getParam('en');
-      const hiId = getParam('hi');
+      const title = getParam('title') || 'नोट्स';
+      const token = getParam('token');
 
-      document.getElementById('unit-label').textContent = unit ? `PHYSICS • UNIT ${unit}` : '';
+      document.getElementById('unit-label').textContent = unit ? `भौतिकी • यूनिट ${unit}` : '';
       document.getElementById('unit-name').textContent = title;
 
-      const btnEn = document.getElementById('btn-en');
-      const btnHi = document.getElementById('btn-hi');
-
-      if (enId) {
-        btnEn.href = `https://drive.google.com/uc?export=download&id=${enId}`;
-        btnEn.style.display = 'block';
-      }
-
-      if (hiId) {
-        btnHi.href = `https://drive.google.com/uc?export=download&id=${hiId}`;
-        btnHi.style.display = 'block';
-      }
-
+      const btn = document.getElementById('btn-download');
+      const loadingMsg = document.getElementById('loading-msg');
       const subtitle = document.getElementById('subtitle');
-      if (enId && hiId) {
-        subtitle.textContent = `Your ${title} notes (English + Hindi) are ready.`;
-      } else if (enId) {
-        subtitle.textContent = `Your ${title} notes (English Medium) are ready.`;
-      } else if (hiId) {
-        subtitle.textContent = `आपके ${title} नोट्स (हिंदी माध्यम) तैयार हैं।`;
+
+      if (!token) {
+        loadingMsg.textContent = 'यह डाउनलोड लिंक अमान्य है या समाप्त हो गई है। कृपया Contact पेज से संपर्क करें।';
+        return;
       }
+
+      // Point the button straight at the redirect worker with the opaque token.
+      // The worker resolves token -> real file and redirects; this page and
+      // its HTML source never contain the real file location.
+      btn.href = `${WORKER_URL}?token=${encodeURIComponent(token)}`;
+      btn.style.display = 'block';
+      loadingMsg.style.display = 'none';
+      subtitle.textContent = `आपके ${title} नोट्स तैयार हैं।`;
     }
 
     window.onload = initPage;
