@@ -493,16 +493,20 @@ footer a:hover { color: var(--amber); }
 
 @media (max-width: 640px) {
   .wrap { padding: 0 18px; }
-  /* topbar: brand + Class toggle share the top row; subjects wrap below */
-  .topbar .wrap { flex-direction: column; align-items: flex-start; position: relative; padding-right: 150px; }
-  .topbar .brand { font-size: 16px; }
+  /* topbar: brand + Class toggle share the top row; nav items on one scrollable row below */
+  .topbar .wrap { flex-direction: column; align-items: flex-start; position: relative; }
+  .topbar .brand { font-size: 16px; padding-right: 150px; }
   .topbar .class-toggle { position: absolute; top: 12px; right: 14px; padding: 2px; }
   .topbar .class-toggle .ct-opt { padding: 4px 8px; font-size: 11px; }
   .topbar .class-toggle .ct-opt.soon .j { font-size: 8px; margin-left: 3px; }
-  .nav-links { width: 100%; justify-content: flex-start; gap: 14px; }
-  .subject-links { gap: 14px; flex-wrap: wrap; }
+  .nav-links { width: 100%; justify-content: flex-start; gap: 16px; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .subject-links { gap: 16px; flex-wrap: nowrap; }
+  .subject-links a, .nav-links > a { white-space: nowrap; }
   .hero { padding: 36px 0 30px; }
-  .hero-stats { gap: 24px; }
+  .hero-stats { gap: 12px; flex-wrap: nowrap; }
+  .hero-stats .num { font-size: 17px; white-space: nowrap; }
+  .hero-stats .label { font-size: 10.5px; }
   .section-head { flex-direction: column; align-items: flex-start; }
   .unit-grid { grid-template-columns: 1fr; }
   .bundle-banner { flex-direction: column; align-items: flex-start; }
