@@ -165,6 +165,197 @@
 .p2-card-cta:hover { filter: brightness(1.05); }
 .p2-card-cta .arr { font-size: 15px; }
 
+/* --- video thumbnail image (from YouTube CDN) + dark shade for text legibility --- */
+.pthumb .bg {
+  position: absolute; inset: 0; z-index: 0;
+  width: 100%; height: 100%; object-fit: cover;
+}
+.pthumb .shade {
+  position: absolute; inset: 0; z-index: 0;
+  background: linear-gradient(180deg, rgba(8,10,20,.15) 0%, rgba(8,10,20,.45) 55%, rgba(8,10,20,.82) 100%);
+}
+
+/* ============================================================
+   SIDEBAR — "यूनिट क्यों खरीदें?" (sits inside the unit grid)
+   ============================================================ */
+.p2-side {
+  background: #FFFFFF;
+  border: 1px solid var(--line, #E6DFCF);
+  border-radius: 16px;
+  color: #1B2237;
+  padding: 22px 20px;
+  display: flex; flex-direction: column;
+  box-shadow: var(--shadow, 0 10px 30px -12px rgba(20, 24, 31, 0.18));
+}
+.p2-side h3 { font-size: 19px; font-weight: 800; color: #1B2237; margin: 0 0 14px; }
+.p2-side ul { list-style: none; margin: 0 0 18px; padding: 0; display: flex; flex-direction: column; gap: 11px; }
+.p2-side li { display: flex; gap: 10px; font-size: 13.5px; font-weight: 600; color: #303952; line-height: 1.45; }
+.p2-side li .ck { color: #16A34A; font-weight: 800; flex: none; }
+.p2-deal {
+  margin-top: auto;
+  border: 1.5px solid #F3B8B8; background: #FFF7F5; border-radius: 12px; padding: 16px;
+}
+.p2-deal .tag { color: #DC2626; font-size: 11.5px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; margin: 0 0 6px; }
+.p2-deal .row { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.p2-deal .name { font-family: var(--font-display); font-size: 17px; font-weight: 800; color: #1B2237; margin: 0; }
+.p2-deal .was { color: #9CA3AF; font-size: 13px; }
+.p2-deal .price-blk { text-align: right; }
+.p2-deal .now {
+  display: inline-block; background: #DC2626; color: #fff;
+  font-family: var(--font-display); font-size: 17px; font-weight: 800;
+  border-radius: 999px; padding: 6px 14px;
+}
+.p2-deal .save { display: block; color: #B91C1C; font-size: 11px; font-weight: 800; margin-top: 4px; }
+.p2-deal .buy {
+  display: block; text-align: center; margin-top: 12px;
+  background: linear-gradient(90deg, #F5C518, #F0B429); color: #3A2A00;
+  font-size: 14px; font-weight: 800; border-radius: 9px; padding: 11px;
+  transition: filter .15s ease;
+}
+.p2-deal .buy:hover { filter: brightness(1.05); }
+
+/* ============================================================
+   BUNDLES ROW
+   ============================================================ */
+.p2-bundles { display: grid; grid-template-columns: 3fr 2fr; gap: 24px; margin-bottom: 44px; }
+.p2-bigbundle {
+  border-radius: 18px; padding: 26px 28px; color: #fff; position: relative; overflow: hidden;
+  display: flex; flex-direction: column; gap: 14px;
+  box-shadow: var(--shadow, 0 10px 30px -12px rgba(20, 24, 31, 0.18));
+}
+.p2-bigbundle.purple { background: linear-gradient(115deg, #4C1D95 0%, #6D28D9 55%, #7C3AED 100%); }
+.p2-bigbundle.green { background: linear-gradient(115deg, #065F46 0%, #047857 60%, #059669 100%); }
+.p2-bigbundle .top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
+.p2-bigbundle .kick { font-size: 13px; font-weight: 700; opacity: .85; margin: 0 0 4px; }
+.p2-bigbundle h3 { font-size: clamp(20px, 2.2vw, 26px); font-weight: 800; margin: 0; color: #fff; }
+.p2-bigbundle .flag {
+  background: #DC2626; color: #fff; font-size: 11px; font-weight: 800;
+  padding: 4px 10px; border-radius: 999px; white-space: nowrap;
+}
+.p2-bigbundle .price-row { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.p2-bigbundle .was { opacity: .7; text-decoration: line-through; font-size: 16px; }
+.p2-bigbundle .now { font-family: var(--font-display); font-size: 34px; font-weight: 800; }
+.p2-bigbundle .save {
+  background: rgba(255,255,255,.18); font-size: 12px; font-weight: 800;
+  padding: 4px 10px; border-radius: 999px;
+}
+.p2-bigbundle ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 7px; }
+.p2-bigbundle li { font-size: 13.5px; font-weight: 600; opacity: .95; display: flex; gap: 8px; }
+.p2-bigbundle .chips { display: flex; gap: 8px; flex-wrap: wrap; }
+.p2-bigbundle .chips span {
+  background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.25);
+  font-size: 11.5px; font-weight: 700; padding: 5px 11px; border-radius: 8px;
+}
+.p2-bigbundle .foot { display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: auto; }
+.p2-bigbundle .proof { font-size: 12.5px; font-weight: 700; opacity: .9; }
+.p2-bigbundle .buy {
+  background: linear-gradient(90deg, #F5C518, #F0B429); color: #3A2A00;
+  font-size: 14.5px; font-weight: 800; border-radius: 10px; padding: 12px 26px;
+  transition: filter .15s ease; white-space: nowrap;
+}
+.p2-bigbundle .buy:hover { filter: brightness(1.06); }
+
+/* ============================================================
+   TRUST BAR (light)
+   ============================================================ */
+.p2-trustbar {
+  display: flex; align-items: stretch; flex-wrap: wrap;
+  background: #FFFFFF; border: 1px solid var(--line, #E6DFCF);
+  border-radius: 16px; margin-bottom: 44px; overflow: hidden;
+  box-shadow: var(--shadow, 0 10px 30px -12px rgba(20, 24, 31, 0.18));
+}
+.p2-trustbar .cell {
+  flex: 1 1 150px; display: flex; align-items: center; gap: 11px;
+  padding: 18px; border-right: 1px solid var(--line, #E6DFCF);
+}
+.p2-trustbar .cell:last-child { border-right: 0; }
+.p2-trustbar .ic { font-size: 21px; flex: none; }
+.p2-trustbar .t { color: #1B2237; font-size: 13px; font-weight: 800; line-height: 1.3; }
+.p2-trustbar .s { color: #6B7280; font-size: 11.5px; }
+.p2-trustbar .cell.grating { background: #F6F9FF; }
+.p2-trustbar .cell.grating .stars { color: #F5B301; font-size: 13px; letter-spacing: 1px; }
+
+/* ============================================================
+   TESTIMONIALS (light)
+   ============================================================ */
+.p2-reviews { margin-bottom: 44px; }
+.p2-reviews .rhead { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
+.p2-reviews h2 { color: var(--navy, #14181F); font-size: 24px; font-weight: 800; margin: 0; }
+.p2-reviews .all { color: var(--amber-deep, #C77E1B); font-size: 13.5px; font-weight: 700; }
+.p2-rgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.p2-review {
+  background: #FFFFFF; border: 1px solid var(--line, #E6DFCF); border-radius: 14px;
+  padding: 20px;
+  box-shadow: var(--shadow, 0 10px 30px -12px rgba(20, 24, 31, 0.18));
+}
+.p2-review .who { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.p2-review .av {
+  width: 42px; height: 42px; border-radius: 50%; flex: none;
+  background: linear-gradient(135deg, #F5B301, #E8833D);
+  color: #241A00; font-family: var(--font-display); font-weight: 800; font-size: 16px;
+  display: flex; align-items: center; justify-content: center;
+}
+.p2-review .nm { color: #1B2237; font-size: 14.5px; font-weight: 800; }
+.p2-review .pl { color: #6B7280; font-size: 12px; }
+.p2-review .stars { color: #F5B301; font-size: 13px; letter-spacing: 1.5px; margin-left: auto; }
+.p2-review p { color: #4B5568; font-size: 13.5px; line-height: 1.65; margin: 0; font-style: italic; }
+
+/* ============================================================
+   FINAL CTA (navy panel, matches site accents)
+   ============================================================ */
+.p2-cta {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+  background: var(--navy, #14181F); border-radius: 18px;
+  padding: 24px 28px; margin-bottom: 44px;
+}
+.p2-cta .left { display: flex; align-items: center; gap: 18px; }
+.p2-cta .rocket { font-size: 40px; }
+.p2-cta h2 { color: #fff; font-size: 21px; font-weight: 800; margin: 0 0 4px; }
+.p2-cta p { color: #9AA3B0; font-size: 13.5px; margin: 0; }
+.p2-wa {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #22C55E; color: #05300F; font-size: 14.5px; font-weight: 800;
+  border-radius: 999px; padding: 13px 26px; transition: filter .15s ease; white-space: nowrap;
+}
+.p2-wa:hover { filter: brightness(1.06); }
+
+/* ============================================================
+   FOOTER (4-column, navy — replaces the one-line footer)
+   ============================================================ */
+footer.p2-footer { background: var(--navy, #14181F); border-top: 1px solid var(--navy-line, #2A3242); padding: 40px 0 0; }
+footer.p2-footer .wrap { display: block; text-align: left; }
+.p2-footgrid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.4fr; gap: 34px; }
+.p2-footgrid .fbrand { color: #fff; font-family: var(--font-display); font-size: 19px; font-weight: 800; margin: 0 0 10px; }
+.p2-footgrid .fbrand .dot { color: #F5B301; }
+.p2-footgrid p { color: #8B93A1; font-size: 13px; line-height: 1.6; margin: 0 0 14px; }
+.p2-footgrid h4 { color: #fff; font-size: 14px; font-weight: 800; margin: 0 0 12px; }
+.p2-footgrid ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 9px; }
+.p2-footgrid li, .p2-footgrid li a { color: #9AA3B8; font-size: 13px; }
+.p2-footgrid li a:hover { color: #F5B301; }
+.p2-social { display: flex; gap: 10px; }
+.p2-social a {
+  width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center;
+  font-size: 15px; background: #1E2532; border: 1px solid #2A3242; transition: background .15s ease;
+}
+.p2-social a:hover { background: #2A3242; }
+.p2-copy {
+  border-top: 1px solid #2A3242; margin-top: 32px; padding: 16px 0;
+  text-align: center; color: #6B7487; font-size: 12.5px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1100px) {
+  .p2-bundles { grid-template-columns: 1fr; }
+  .p2-rgrid { grid-template-columns: 1fr; }
+  .p2-footgrid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .p2-footgrid { grid-template-columns: 1fr; }
+  .p2-cta { flex-direction: column; align-items: flex-start; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .pcard, .p2-price, .watch-btn, .p2-card-cta, .p2-sample { transition: none; }
   .pcard:hover { transform: none; }
