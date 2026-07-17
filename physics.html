@@ -14,6 +14,58 @@
 </head>
 <body>
 
+<!-- SVG icon sprite (defined once, reused across all cards) -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-notes" viewBox="0 0 24 24">
+    <path d="M5 3a1.5 1.5 0 0 1 1.5-1.5H15l4 4V21A1.5 1.5 0 0 1 17.5 22.5h-11A1.5 1.5 0 0 1 5 21z" fill="#2F6690"/>
+    <path d="M15 1.5l4 4h-4z" fill="#8FB3CB"/>
+    <rect x="8" y="10" width="8" height="1.6" rx=".8" fill="#fff"/>
+    <rect x="8" y="13.5" width="8" height="1.6" rx=".8" fill="#fff"/>
+    <rect x="8" y="17" width="5" height="1.6" rx=".8" fill="#fff"/>
+  </symbol>
+  <symbol id="i-ncert" viewBox="0 0 24 24">
+    <path d="M4 4a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2z" fill="#4FA69C"/>
+    <path d="M4 20a2 2 0 0 1 2-2h14v4H6a2 2 0 0 1-2-2z" fill="#2F6690"/>
+    <rect x="8" y="6" width="8" height="1.6" rx=".8" fill="#fff"/>
+    <rect x="8" y="9.5" width="6" height="1.6" rx=".8" fill="#fff"/>
+  </symbol>
+  <symbol id="i-intext" viewBox="0 0 24 24">
+    <rect x="2" y="2" width="20" height="20" rx="5" fill="#C0392B"/>
+    <path d="M12 15.2v-.6c0-1 .55-1.6 1.35-2.14.8-.55 1.4-1.2 1.4-2.36A2.75 2.75 0 0 0 12 7.35 2.83 2.83 0 0 0 9.2 9.6" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round"/>
+    <circle cx="12" cy="18" r="1.3" fill="#fff"/>
+  </symbol>
+  <symbol id="i-exercise" viewBox="0 0 24 24">
+    <rect x="2" y="2" width="20" height="20" rx="5" fill="#2E8B57"/>
+    <path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-pyq" viewBox="0 0 24 24">
+    <path d="M5 3a1.5 1.5 0 0 1 1.5-1.5H15l4 4V21A1.5 1.5 0 0 1 17.5 22.5h-11A1.5 1.5 0 0 1 5 21z" fill="#C77E1B"/>
+    <path d="M15 1.5l4 4h-4z" fill="#EBC894"/>
+    <circle cx="12" cy="14" r="4.4" fill="none" stroke="#fff" stroke-width="1.6"/>
+    <path d="M12 11.5V14l1.8 1.2" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-qbank" viewBox="0 0 24 24">
+    <path d="M3 6a2 2 0 0 1 2-2h5l2 2.5h7a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" fill="#E8A33D"/>
+    <path d="M3 10h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" fill="#C77E1B"/>
+  </symbol>
+  <symbol id="i-revision" viewBox="0 0 24 24">
+    <path d="M20 12a8 8 0 1 1-3.1-6.32" fill="none" stroke="#2F6690" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M20 3.5v5h-5z" fill="#2F6690"/>
+  </symbol>
+  <symbol id="i-formula" viewBox="0 0 24 24">
+    <rect x="4" y="2" width="16" height="20" rx="3" fill="#14181F"/>
+    <rect x="7" y="5" width="10" height="4" rx="1" fill="#E8A33D"/>
+    <circle cx="8.5" cy="13" r="1.2" fill="#fff"/><circle cx="12" cy="13" r="1.2" fill="#fff"/><circle cx="15.5" cy="13" r="1.2" fill="#fff"/>
+    <circle cx="8.5" cy="17" r="1.2" fill="#fff"/><circle cx="12" cy="17" r="1.2" fill="#fff"/><circle cx="15.5" cy="17" r="1.2" fill="#fff"/>
+  </symbol>
+  <symbol id="i-google" viewBox="0 0 48 48">
+    <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+    <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+    <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+    <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+  </symbol>
+</svg>
+
 <div class="topbar">
   <div class="wrap">
     <a href="index.html" class="brand">UPBoardExam<span class="dot">•</span>Com</a>
@@ -94,14 +146,14 @@
           </a>
           <p class="p2-inc-label">इस पैक में शामिल है:</p>
           <div class="p2-inc-grid">
-            <div class="p2-inc"><span class="ic">📝</span><span class="tx">Complete Notes (PDF)</span></div>
-            <div class="p2-inc"><span class="ic">📘</span><span class="tx">NCERT Solutions</span></div>
-            <div class="p2-inc"><span class="ic">❓</span><span class="tx">Intext Questions</span></div>
-            <div class="p2-inc"><span class="ic">✅</span><span class="tx">Exercise Solutions</span></div>
-            <div class="p2-inc"><span class="ic">📄</span><span class="tx">PYQs (5 Years)</span></div>
-            <div class="p2-inc"><span class="ic">🗂️</span><span class="tx">Question Bank</span></div>
-            <div class="p2-inc"><span class="ic">🔄</span><span class="tx">Revision Sheet</span></div>
-            <div class="p2-inc"><span class="ic">🧮</span><span class="tx">Formula Sheet</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-notes"/></svg><span class="tx">Complete Notes (PDF)</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-ncert"/></svg><span class="tx">NCERT Solutions</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-intext"/></svg><span class="tx">Intext Questions</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-exercise"/></svg><span class="tx">Exercise Solutions</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-pyq"/></svg><span class="tx">PYQs (5 Years)</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-qbank"/></svg><span class="tx">Question Bank</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-revision"/></svg><span class="tx">Revision Sheet</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-formula"/></svg><span class="tx">Formula Sheet</span></div>
           </div>
           <div class="p2-proof">
             <span class="buyers">👥 1,284+ छात्र इस यूनिट को खरीद चुके हैं</span>
@@ -135,14 +187,14 @@
           </a>
           <p class="p2-inc-label">इस पैक में शामिल है:</p>
           <div class="p2-inc-grid">
-            <div class="p2-inc"><span class="ic">📝</span><span class="tx">Complete Notes (PDF)</span></div>
-            <div class="p2-inc"><span class="ic">📘</span><span class="tx">NCERT Solutions</span></div>
-            <div class="p2-inc"><span class="ic">❓</span><span class="tx">Intext Questions</span></div>
-            <div class="p2-inc"><span class="ic">✅</span><span class="tx">Exercise Solutions</span></div>
-            <div class="p2-inc"><span class="ic">📄</span><span class="tx">PYQs (5 Years)</span></div>
-            <div class="p2-inc"><span class="ic">🗂️</span><span class="tx">Question Bank</span></div>
-            <div class="p2-inc"><span class="ic">🔄</span><span class="tx">Revision Sheet</span></div>
-            <div class="p2-inc"><span class="ic">🧮</span><span class="tx">Formula Sheet</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-notes"/></svg><span class="tx">Complete Notes (PDF)</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-ncert"/></svg><span class="tx">NCERT Solutions</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-intext"/></svg><span class="tx">Intext Questions</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-exercise"/></svg><span class="tx">Exercise Solutions</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-pyq"/></svg><span class="tx">PYQs (5 Years)</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-qbank"/></svg><span class="tx">Question Bank</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-revision"/></svg><span class="tx">Revision Sheet</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-formula"/></svg><span class="tx">Formula Sheet</span></div>
           </div>
           <div class="p2-proof">
             <span class="buyers">👥 1,097+ छात्र इस यूनिट को खरीद चुके हैं</span>
@@ -176,14 +228,14 @@
           </a>
           <p class="p2-inc-label">इस पैक में शामिल है:</p>
           <div class="p2-inc-grid">
-            <div class="p2-inc"><span class="ic">📝</span><span class="tx">Complete Notes (PDF)</span></div>
-            <div class="p2-inc"><span class="ic">📘</span><span class="tx">NCERT Solutions</span></div>
-            <div class="p2-inc"><span class="ic">❓</span><span class="tx">Intext Questions</span></div>
-            <div class="p2-inc"><span class="ic">✅</span><span class="tx">Exercise Solutions</span></div>
-            <div class="p2-inc"><span class="ic">📄</span><span class="tx">PYQs (5 Years)</span></div>
-            <div class="p2-inc"><span class="ic">🗂️</span><span class="tx">Question Bank</span></div>
-            <div class="p2-inc"><span class="ic">🔄</span><span class="tx">Revision Sheet</span></div>
-            <div class="p2-inc"><span class="ic">🧮</span><span class="tx">Formula Sheet</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-notes"/></svg><span class="tx">Complete Notes (PDF)</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-ncert"/></svg><span class="tx">NCERT Solutions</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-intext"/></svg><span class="tx">Intext Questions</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-exercise"/></svg><span class="tx">Exercise Solutions</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-pyq"/></svg><span class="tx">PYQs (5 Years)</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-qbank"/></svg><span class="tx">Question Bank</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-revision"/></svg><span class="tx">Revision Sheet</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-formula"/></svg><span class="tx">Formula Sheet</span></div>
           </div>
           <div class="p2-proof">
             <span class="buyers">👥 1,632+ छात्र इस यूनिट को खरीद चुके हैं</span>
@@ -217,14 +269,14 @@
           </a>
           <p class="p2-inc-label">इस पैक में शामिल है:</p>
           <div class="p2-inc-grid">
-            <div class="p2-inc"><span class="ic">📝</span><span class="tx">Complete Notes (PDF)</span></div>
-            <div class="p2-inc"><span class="ic">📘</span><span class="tx">NCERT Solutions</span></div>
-            <div class="p2-inc"><span class="ic">❓</span><span class="tx">Intext Questions</span></div>
-            <div class="p2-inc"><span class="ic">✅</span><span class="tx">Exercise Solutions</span></div>
-            <div class="p2-inc"><span class="ic">📄</span><span class="tx">PYQs (5 Years)</span></div>
-            <div class="p2-inc"><span class="ic">🗂️</span><span class="tx">Question Bank</span></div>
-            <div class="p2-inc"><span class="ic">🔄</span><span class="tx">Revision Sheet</span></div>
-            <div class="p2-inc"><span class="ic">🧮</span><span class="tx">Formula Sheet</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-notes"/></svg><span class="tx">Complete Notes (PDF)</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-ncert"/></svg><span class="tx">NCERT Solutions</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-intext"/></svg><span class="tx">Intext Questions</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-exercise"/></svg><span class="tx">Exercise Solutions</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-pyq"/></svg><span class="tx">PYQs (5 Years)</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-qbank"/></svg><span class="tx">Question Bank</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-revision"/></svg><span class="tx">Revision Sheet</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-formula"/></svg><span class="tx">Formula Sheet</span></div>
           </div>
           <div class="p2-proof">
             <span class="buyers">👥 962+ छात्र इस यूनिट को खरीद चुके हैं</span>
@@ -258,14 +310,14 @@
           </a>
           <p class="p2-inc-label">इस पैक में शामिल है:</p>
           <div class="p2-inc-grid">
-            <div class="p2-inc"><span class="ic">📝</span><span class="tx">Complete Notes (PDF)</span></div>
-            <div class="p2-inc"><span class="ic">📘</span><span class="tx">NCERT Solutions</span></div>
-            <div class="p2-inc"><span class="ic">❓</span><span class="tx">Intext Questions</span></div>
-            <div class="p2-inc"><span class="ic">✅</span><span class="tx">Exercise Solutions</span></div>
-            <div class="p2-inc"><span class="ic">📄</span><span class="tx">PYQs (5 Years)</span></div>
-            <div class="p2-inc"><span class="ic">🗂️</span><span class="tx">Question Bank</span></div>
-            <div class="p2-inc"><span class="ic">🔄</span><span class="tx">Revision Sheet</span></div>
-            <div class="p2-inc"><span class="ic">🧮</span><span class="tx">Formula Sheet</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-notes"/></svg><span class="tx">Complete Notes (PDF)</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-ncert"/></svg><span class="tx">NCERT Solutions</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-intext"/></svg><span class="tx">Intext Questions</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-exercise"/></svg><span class="tx">Exercise Solutions</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-pyq"/></svg><span class="tx">PYQs (5 Years)</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-qbank"/></svg><span class="tx">Question Bank</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-revision"/></svg><span class="tx">Revision Sheet</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-formula"/></svg><span class="tx">Formula Sheet</span></div>
           </div>
           <div class="p2-proof">
             <span class="buyers">👥 843+ छात्र इस यूनिट को खरीद चुके हैं</span>
@@ -342,14 +394,14 @@
           </a>
           <p class="p2-inc-label">इस पैक में शामिल है:</p>
           <div class="p2-inc-grid">
-            <div class="p2-inc"><span class="ic">📝</span><span class="tx">Complete Notes (PDF)</span></div>
-            <div class="p2-inc"><span class="ic">📘</span><span class="tx">NCERT Solutions</span></div>
-            <div class="p2-inc"><span class="ic">❓</span><span class="tx">Intext Questions</span></div>
-            <div class="p2-inc"><span class="ic">✅</span><span class="tx">Exercise Solutions</span></div>
-            <div class="p2-inc"><span class="ic">📄</span><span class="tx">PYQs (5 Years)</span></div>
-            <div class="p2-inc"><span class="ic">🗂️</span><span class="tx">Question Bank</span></div>
-            <div class="p2-inc"><span class="ic">🔄</span><span class="tx">Revision Sheet</span></div>
-            <div class="p2-inc"><span class="ic">🧮</span><span class="tx">Formula Sheet</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-notes"/></svg><span class="tx">Complete Notes (PDF)</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-ncert"/></svg><span class="tx">NCERT Solutions</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-intext"/></svg><span class="tx">Intext Questions</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-exercise"/></svg><span class="tx">Exercise Solutions</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-pyq"/></svg><span class="tx">PYQs (5 Years)</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-qbank"/></svg><span class="tx">Question Bank</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-revision"/></svg><span class="tx">Revision Sheet</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-formula"/></svg><span class="tx">Formula Sheet</span></div>
           </div>
           <div class="p2-proof">
             <span class="buyers">👥 713+ छात्र इस यूनिट को खरीद चुके हैं</span>
@@ -383,14 +435,14 @@
           </a>
           <p class="p2-inc-label">इस पैक में शामिल है:</p>
           <div class="p2-inc-grid">
-            <div class="p2-inc"><span class="ic">📝</span><span class="tx">Complete Notes (PDF)</span></div>
-            <div class="p2-inc"><span class="ic">📘</span><span class="tx">NCERT Solutions</span></div>
-            <div class="p2-inc"><span class="ic">❓</span><span class="tx">Intext Questions</span></div>
-            <div class="p2-inc"><span class="ic">✅</span><span class="tx">Exercise Solutions</span></div>
-            <div class="p2-inc"><span class="ic">📄</span><span class="tx">PYQs (5 Years)</span></div>
-            <div class="p2-inc"><span class="ic">🗂️</span><span class="tx">Question Bank</span></div>
-            <div class="p2-inc"><span class="ic">🔄</span><span class="tx">Revision Sheet</span></div>
-            <div class="p2-inc"><span class="ic">🧮</span><span class="tx">Formula Sheet</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-notes"/></svg><span class="tx">Complete Notes (PDF)</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-ncert"/></svg><span class="tx">NCERT Solutions</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-intext"/></svg><span class="tx">Intext Questions</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-exercise"/></svg><span class="tx">Exercise Solutions</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-pyq"/></svg><span class="tx">PYQs (5 Years)</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-qbank"/></svg><span class="tx">Question Bank</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-revision"/></svg><span class="tx">Revision Sheet</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-formula"/></svg><span class="tx">Formula Sheet</span></div>
           </div>
           <div class="p2-proof">
             <span class="buyers">👥 654+ छात्र इस यूनिट को खरीद चुके हैं</span>
@@ -424,14 +476,14 @@
           </a>
           <p class="p2-inc-label">इस पैक में शामिल है:</p>
           <div class="p2-inc-grid">
-            <div class="p2-inc"><span class="ic">📝</span><span class="tx">Complete Notes (PDF)</span></div>
-            <div class="p2-inc"><span class="ic">📘</span><span class="tx">NCERT Solutions</span></div>
-            <div class="p2-inc"><span class="ic">❓</span><span class="tx">Intext Questions</span></div>
-            <div class="p2-inc"><span class="ic">✅</span><span class="tx">Exercise Solutions</span></div>
-            <div class="p2-inc"><span class="ic">📄</span><span class="tx">PYQs (5 Years)</span></div>
-            <div class="p2-inc"><span class="ic">🗂️</span><span class="tx">Question Bank</span></div>
-            <div class="p2-inc"><span class="ic">🔄</span><span class="tx">Revision Sheet</span></div>
-            <div class="p2-inc"><span class="ic">🧮</span><span class="tx">Formula Sheet</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-notes"/></svg><span class="tx">Complete Notes (PDF)</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-ncert"/></svg><span class="tx">NCERT Solutions</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-intext"/></svg><span class="tx">Intext Questions</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-exercise"/></svg><span class="tx">Exercise Solutions</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-pyq"/></svg><span class="tx">PYQs (5 Years)</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-qbank"/></svg><span class="tx">Question Bank</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-revision"/></svg><span class="tx">Revision Sheet</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-formula"/></svg><span class="tx">Formula Sheet</span></div>
           </div>
           <div class="p2-proof">
             <span class="buyers">👥 589+ छात्र इस यूनिट को खरीद चुके हैं</span>
@@ -465,14 +517,14 @@
           </a>
           <p class="p2-inc-label">इस पैक में शामिल है:</p>
           <div class="p2-inc-grid">
-            <div class="p2-inc"><span class="ic">📝</span><span class="tx">Complete Notes (PDF)</span></div>
-            <div class="p2-inc"><span class="ic">📘</span><span class="tx">NCERT Solutions</span></div>
-            <div class="p2-inc"><span class="ic">❓</span><span class="tx">Intext Questions</span></div>
-            <div class="p2-inc"><span class="ic">✅</span><span class="tx">Exercise Solutions</span></div>
-            <div class="p2-inc"><span class="ic">📄</span><span class="tx">PYQs (5 Years)</span></div>
-            <div class="p2-inc"><span class="ic">🗂️</span><span class="tx">Question Bank</span></div>
-            <div class="p2-inc"><span class="ic">🔄</span><span class="tx">Revision Sheet</span></div>
-            <div class="p2-inc"><span class="ic">🧮</span><span class="tx">Formula Sheet</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-notes"/></svg><span class="tx">Complete Notes (PDF)</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-ncert"/></svg><span class="tx">NCERT Solutions</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-intext"/></svg><span class="tx">Intext Questions</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-exercise"/></svg><span class="tx">Exercise Solutions</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-pyq"/></svg><span class="tx">PYQs (5 Years)</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-qbank"/></svg><span class="tx">Question Bank</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-revision"/></svg><span class="tx">Revision Sheet</span></div>
+            <div class="p2-inc"><svg class="ic"><use href="#i-formula"/></svg><span class="tx">Formula Sheet</span></div>
           </div>
           <div class="p2-proof">
             <span class="buyers">👥 482+ छात्र इस यूनिट को खरीद चुके हैं</span>
@@ -545,10 +597,9 @@
     <div class="cell"><span class="ic">⚡</span><div><div class="t">तुरंत डाउनलोड</div><div class="s">भुगतान के तुरंत बाद</div></div></div>
     <div class="cell"><span class="ic">♾️</span><div><div class="t">लाइफटाइम एक्सेस</div><div class="s">कभी भी, कहीं भी पढ़ें</div></div></div>
     <div class="cell"><span class="ic">📱</span><div><div class="t">मोबाइल + लैपटॉप</div><div class="s">सभी डिवाइस पर चालू</div></div></div>
-    <div class="cell"><span class="ic">🔄</span><div><div class="t">फ्री अपडेट्स</div><div class="s">नए अपडेट्स हमेशा मुफ्त</div></div></div>
     <div class="cell"><span class="ic">🔒</span><div><div class="t">100% सुरक्षित भुगतान</div><div class="s">सुरक्षित और भरोसेमंद</div></div></div>
     <div class="cell grating">
-      <span class="ic" style="font-family:var(--font-display); font-weight:800; color:#4285F4;">G</span>
+      <svg class="gsvg" aria-hidden="true"><use href="#i-google"/></svg>
       <div>
         <div class="t">छात्रों का विश्वास</div>
         <div><span class="stars">★★★★★</span> <strong style="font-size:12px; color:#1B2237;">4.9/5</strong> <span class="s">(2,354 Reviews)</span></div>
