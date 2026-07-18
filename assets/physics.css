@@ -727,7 +727,7 @@ footer.p2-footer { padding: 26px 0 0; }
 .hp-desc { font-size: 13px; line-height: 1.55; opacity: .95; margin: 0; }
 
 .hp-btn {
-  align-self: flex-end; margin-top: 6px;
+  align-self: flex-end; margin-top: -7px;
   background: var(--amber, #E8A33D); color: var(--navy, #14181F);
   font-size: 13.5px; font-weight: 800; padding: 9px 18px; border-radius: 999px;
   transition: filter .15s ease;
