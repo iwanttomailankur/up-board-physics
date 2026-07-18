@@ -626,10 +626,10 @@ footer.p2-footer .wrap { display: block; text-align: left; }
    ============================================================ */
 .topbar .wrap { padding-top: 10px; padding-bottom: 10px; }
 
-.hero { padding: 30px 0 24px; }
-.hero-eyebrow { margin: 0 0 8px; }
-.hero h1 { margin: 0 0 10px; }
-.hero .lead { margin: 0 0 18px; }
+.hero { padding: 24px 0 22px; }
+.hero-eyebrow { margin: 0 0 6px; }
+.hero h1 { margin: 0 0 8px; }
+.hero .lead { margin: 0 0 12px; }
 .hero-stats { gap: 30px; }
 
 main.wrap { padding-top: 24px; padding-bottom: 8px; }
@@ -673,10 +673,10 @@ footer.p2-footer { padding: 26px 0 0; }
 
 
 /* hero promo carousel */
-.hero .hero-2col { display: flex; gap: 32px; align-items: flex-start; flex-wrap: wrap; }
+.hero .hero-2col { display: flex; gap: 32px; align-items: stretch; flex-wrap: wrap; }
 
 /* hero: stats on top, full-subject bundle bar directly below them */
-.hero-statsrow { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; margin-top: 18px; max-width: 600px; }
+.hero-statsrow { display: flex; flex-direction: column; align-items: flex-start; gap: 13px; margin-top: 14px; max-width: 600px; }
 .hero-statsrow .hero-stats { margin-top: 0; }
 
 /* hero full-subject bundle — compact horizontal bar below the stats */
@@ -708,9 +708,9 @@ footer.p2-footer { padding: 26px 0 0; }
   .hero-bundle .hb-price { margin-left: 0; }
 }
 .hero-left { flex: 1 1 430px; min-width: 70%; }
-.hero-promo { flex: 0 0 200px; max-width: 25%; margin-left: auto; }
-.hp-viewport { overflow: hidden; border-radius: 16px; box-shadow: 0 16px 40px -16px rgba(0,0,0,.6); }
-.hp-track { display: flex; align-items: stretch; transition: transform .6s ease; }
+.hero-promo { flex: 0 0 200px; max-width: 25%; margin-left: auto; display: flex; flex-direction: column; }
+.hp-viewport { flex: 1; overflow: hidden; border-radius: 16px; box-shadow: 0 16px 40px -16px rgba(0,0,0,.6); }
+.hp-track { display: flex; align-items: stretch; height: 100%; transition: transform .6s ease; }
 .hp-slide { flex: 0 0 100%; display: flex; }
 .hp-card {
   flex: 1;
