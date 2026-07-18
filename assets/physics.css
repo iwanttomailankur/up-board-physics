@@ -709,13 +709,13 @@ footer.p2-footer { padding: 26px 0 0; }
 }
 .hero-left { flex: 1 1 430px; min-width: 70%; }
 .hero-promo { flex: 0 0 200px; max-width: 25%; margin-left: auto; align-self: flex-end; display: flex; flex-direction: column; }
-.hp-viewport { height: 250px; overflow: hidden; border-radius: 16px; box-shadow: 0 16px 40px -16px rgba(0,0,0,.6); }
+.hp-viewport { height: 212px; overflow: hidden; border-radius: 16px; box-shadow: 0 16px 40px -16px rgba(0,0,0,.6); }
 .hp-track { display: flex; align-items: stretch; height: 100%; transition: transform .6s ease; }
 .hp-slide { flex: 0 0 100%; display: flex; }
 .hp-card {
   flex: 1;
   display: flex; flex-direction: column; gap: 9px; min-height: 214px;
-  padding: 18px; color: #fff;
+  padding: 14px; color: #fff;
 }
 .hp-kick { font-size: 12px; font-weight: 700; opacity: .85; margin: 0; }
 .hp-card h3 { font-family: var(--font-display); font-size: 17px; font-weight: 800; margin: 0; color: #fff; line-height: 1.25; }
